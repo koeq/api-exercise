@@ -63,3 +63,18 @@ async function displayUser() {
 }
 
 window.addEventListener("DOMContentLoaded", displayUser().catch(handleError));
+
+// repetition
+const url = "https://api.github.com/";
+
+async function displayGit() {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data.current_user_url);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+displayGit();
